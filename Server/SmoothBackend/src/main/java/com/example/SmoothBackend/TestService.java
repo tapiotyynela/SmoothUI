@@ -10,9 +10,9 @@ public class TestService {
     private static long idCounter = 0;
 
     static {
-        tests.add(new TestClass(++idCounter, "testdata", "Tämä teksti tulee Smooth Backendistä"));
-        tests.add(new TestClass(++idCounter, "testdata", "Tämä teksti tulee myös Smooth Backendistä"));
-        tests.add(new TestClass(++idCounter, "testdata", "Tämä teksti varsinkin tulee Smooth Backendistä"));
+        tests.add(new TestClass("testdata", "Tämä teksti tulee Smooth Backendistä"));
+        tests.add(new TestClass("testdata", "Tämä teksti tulee myös Smooth Backendistä"));
+        tests.add(new TestClass("testdata", "Tämä teksti varsinkin tulee Smooth Backendistä"));
     }
 
     public List<TestClass> findAll() {
