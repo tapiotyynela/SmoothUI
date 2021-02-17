@@ -11,6 +11,8 @@ public class SmoothBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SmoothBackendApplication.class, args);
 		System.out.println("MOIKKA");
+		System.out.println("Testing user change");
+
 	}
 
 }
