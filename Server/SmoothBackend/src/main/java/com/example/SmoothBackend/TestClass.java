@@ -2,12 +2,11 @@ package com.example.SmoothBackend;
 
 public class TestClass {
     
-	private Long id;
+	private String id;
     private String name;
     private String description;
 
-    public TestClass(Long id, String name, String description) {
-        this.id = id;
+    public TestClass(String name, String description) {
         this.name = name;
         this.description = description;
     }
@@ -15,11 +14,11 @@ public class TestClass {
     public TestClass() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
