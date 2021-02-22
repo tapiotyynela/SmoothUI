@@ -6,7 +6,7 @@ function Header() {
 	const [backendText, setBackendText] = useState('')
 
 	useEffect(() => {
-		axios.get('/instructors/testdata/tests')
+		axios.get('/testdata/tests')
 		.then(response => setBackendText(JSON.stringify(response.data)))
 	}, [])
 

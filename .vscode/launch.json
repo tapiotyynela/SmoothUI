@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SmoothBackendApplication",
+            "request": "launch",
+            "mainClass": "com.example.SmoothBackend.SmoothBackendApplication",
+            "projectName": "SmoothBackend"
+        }
+    ]
+}

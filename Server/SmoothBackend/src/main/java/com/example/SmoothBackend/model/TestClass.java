@@ -1,8 +1,13 @@
-package com.example.SmoothBackend;
+package com.example.SmoothBackend.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.Objects;
+
+@Document
 public class TestClass {
-    
-	private String id;
+    @Id 
+    private String id;
     private String name;
     private String description;
 
