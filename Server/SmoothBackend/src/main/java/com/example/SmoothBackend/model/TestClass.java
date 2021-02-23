@@ -2,9 +2,8 @@ package com.example.SmoothBackend.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Objects;
 
-@Document
+@Document(collection = "testClass")
 public class TestClass {
     @Id 
     private String id;
