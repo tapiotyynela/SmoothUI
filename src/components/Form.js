@@ -14,7 +14,8 @@ const Form = () => {
 	const onSubmit = (values) => {
 		axios
 			.post("/api/tests", { name: testClass.name, description: testClass.description })
-			.then((response) => console.log("abc", response.data));
+			.then((res) => console.log("Lisäys onnistui"))
+			.catch((err) => console.log("Virhettä pukkaa", err));
 	};
 
 	const handleChange = (e) => {
