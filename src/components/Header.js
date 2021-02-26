@@ -1,19 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react"
-import axios from "axios"
+import { Box } from "@chakra-ui/react";
 
 function Header() {
-	const [backendText, setBackendText] = useState('')
-
-	useEffect(() => {
-		axios.get('/testdata/tests')
-		.then(response => setBackendText(JSON.stringify(response.data)))
-	}, [])
-
 	return (
 		<>
-			<h1>Olen header</h1>
-			<p>{backendText}</p>
+			<Box bg="tomato" w="100%" p={4} color="white"></Box>
 		</>
 	);
 }
