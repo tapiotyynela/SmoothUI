@@ -1,12 +1,15 @@
 import "./App.css";
 import Header from "./components/Header";
+import Form from "./components/Form";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
-	console.log("Olen pummi");
 	return (
 		<>
-			<h1>Olen App</h1>
-			<Header />
+			<ChakraProvider>
+				<Header />
+				<Form />
+			</ChakraProvider>
 		</>
 	);
 }
