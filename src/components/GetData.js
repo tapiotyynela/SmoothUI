@@ -11,14 +11,12 @@ const GetData = () => {
 	}, []);
 
 	const asd = () => {
-		axios.get("/api/alltests").then((res) => setA(res));
+		axios.get("/api/alltests").then((res) => setA(res.data));
 	};
 
 	return (
 		<>
-			<Box>
-				<p>{a}</p>
-			</Box>
+			<Box bg="black" w="100%" p={4} color="white"></Box>
 		</>
 	);
 };

@@ -2,18 +2,38 @@ import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import GetData from "./components/GetData";
-import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { ChakraProvider, Button, Center } from "@chakra-ui/react";
 
-function App() {
+const App = () => {
 	return (
-		<>
+		<Router>
 			<ChakraProvider>
-				<Header />
-				<Form />
-				<GetData />
+				<Center>
+					<Button colorScheme="facebook">
+						<Link to="/header">Trophies</Link>
+					</Button>
+					<Button colorScheme="whatsapp">
+						<Link to="/form">Users</Link>
+					</Button>
+					<Button colorScheme="twitter">
+						<Link to="/getdata">Games</Link>
+					</Button>
+				</Center>
+				<Switch>
+					<Route path="/header">
+						<Header />
+					</Route>
+					<Route path="/form">
+						<Form />
+					</Route>
+					<Route path="/getdata">
+						<GetData />
+					</Route>
+				</Switch>
 			</ChakraProvider>
-		</>
+		</Router>
 	);
-}
+};
 
 export default App;
