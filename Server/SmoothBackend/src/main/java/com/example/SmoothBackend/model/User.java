@@ -1,5 +1,8 @@
 package com.example.SmoothBackend.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "User")
 public class User {
     
     private String id;
@@ -9,8 +12,7 @@ public class User {
     public User() {
     }
 
-    public User(String id, String username, String password) {
-        this.id = id;
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }

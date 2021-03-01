@@ -1,7 +1,9 @@
 package com.example.SmoothBackend.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Game")
 public class Game {
     
     @Id
@@ -13,8 +15,7 @@ public class Game {
     public Game() {
     }
 
-    public Game(String id, String gameName, String description, String trophyId) {
-        this.id = id;
+    public Game(String gameName, String description, String trophyId) {
         this.gameName = gameName;
         this.description = description;
         this.trophyId = trophyId;
