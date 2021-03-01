@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 
-const Header = () => {
+const Trophies = () => {
 	return (
 		<>
 			<Box bg="blue" w="100%" p={4} color="white"></Box>
@@ -9,4 +9,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default Trophies;

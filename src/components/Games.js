@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, FormLabel, Input, Button } from "@chakra-ui/react";
 
-const GetData = () => {
+const Games = () => {
 	const [a, setA] = useState([]);
 
 	useEffect(() => {
@@ -21,4 +21,4 @@ const GetData = () => {
 	);
 };
 
-export default GetData;
+export default Games;
