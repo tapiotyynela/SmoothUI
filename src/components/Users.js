@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Box, FormLabel, Input, Button } from "@chakra-ui/react";
 
-const Form = () => {
+const Users = () => {
 	const [testClass, setTestClass] = useState({
 		name: "",
 		description: "",
@@ -44,4 +44,4 @@ const Form = () => {
 	);
 };
 
-export default Form;
+export default Users;
