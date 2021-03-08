@@ -11,7 +11,7 @@ const Users = () => {
 	});
 	const { handleSubmit, register, formState } = useForm();
 
-	const onSubmit = (values) => {
+	const onSubmit = (values: any) => {
 		axios
 			.post("/api/tests", { name: testClass.name, description: testClass.description })
 			.then((res) => console.log("Lisäys onnistui"))
