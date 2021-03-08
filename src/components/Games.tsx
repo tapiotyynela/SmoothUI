@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { ResponseType } from "axios";
 import { Box, FormLabel, Input, Button } from "@chakra-ui/react";
 
 const Games = () => {
