@@ -2,25 +2,26 @@ import "./App.css";
 import Trophies from "./components/Trophies";
 import Users from "./components/Users";
 import Games from "./components/Games";
+import Navigation from "./components/Navigation";
+import { ChakraProvider, Button } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { ChakraProvider, Button, Center } from "@chakra-ui/react";
 
 const App = () => {
 	return (
 		<Router>
 			<ChakraProvider>
-				<Center>
-					<Button colorScheme="facebook">
-						<Link to="/trophies">Trophies</Link>
-					</Button>
-					<Button colorScheme="whatsapp">
-						<Link to="/users">Users</Link>
-					</Button>
-					<Button colorScheme="twitter">
-						<Link to="/games">Games</Link>
-					</Button>
-				</Center>
-				<Switch>
+				<Navigation />
+				<Route exact path="/games" component={Games} />
+				<Route exact path="/users" component={Users} />
+				<Route exact path="/trophies" component={Trophies} />
+			</ChakraProvider>
+		</Router>
+	);
+};
+
+export default App;
+
+/* <Switch>
 					<Route path="/trophies">
 						<Trophies />
 					</Route>
@@ -31,9 +32,4 @@ const App = () => {
 						<Games />
 					</Route>
 				</Switch>
-			</ChakraProvider>
-		</Router>
-	);
-};
-
-export default App;
+				*/
