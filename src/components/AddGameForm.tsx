@@ -14,8 +14,7 @@ const AddGameForm: any = (props) => {
 	const onSubmit = (values: any) => {
 		axios
             .post("/api/newGame", { gameName: Game.gameName, description: Game.description, trophyId: Game.trophyId })
-            .then(() => props.getGames)
-			.then((res) => console.log("Lisäys onnistui"))
+            .then(props.getGames)
 			.catch((err) => console.log("Virhettä pukkaa", err));
 	};
 
