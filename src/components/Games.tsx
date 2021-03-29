@@ -1,22 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios, { ResponseType } from "axios";
-import { Box, FormLabel, Input, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import AddGameForm from "./AddGameForm";
 
 const Games = () => {
-	const [a, setA] = useState([]);
+	const [games, setGames] = useState([]);
 
 	useEffect(() => {
-		asd();
+		getGames();
 	}, []);
 
-	const asd = () => {
-		axios.get("/api/alltests").then((res) => setA(res.data));
+	const getGames: any = () => {
+		axios.get("/api/getGames").then((res) => setGames(res.data));
 	};
 
 	return (
-		<>
-			<Box bg="black" w="100%" p={4} color="white"></Box>
+		<>	
+			<Box bg="black" w="100%" p={4} color="white">
+				<AddGameForm getGames={getGames}/>
+			</Box>
 		</>
 	);
 };
