@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,9 +29,9 @@ public class GameController {
     }
 
     @PostMapping("/newGame")
-    public ResponseEntity<Game> createGame(@RequestBody Game Game) {
+    public ResponseEntity<Game> createGame(@RequestBody Game game) {
         try {
-            Game _Game = repository.save(new Game(Game.getGameName(), Game.getDescription(), Game.getTrophyId()));
+            Game _Game = repository.save(new Game(game.getGameName(), game.getDescription(), game.getTrophyId()));
             return new ResponseEntity<>(_Game, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -47,23 +48,42 @@ public class GameController {
         }
     }
 
-    @PutMapping("/updateGames")
-    public ResponseEntity<Game> updateGame(@RequestBody Game Game) {
+    @DeleteMapping(path = "/deleteGame/{id}")
+    public ResponseEntity<Game> deleteGame(@PathVariable("id") String id) {
         try {
-            Game _Game = repository.save(new Game(Game.getGameName(), Game.getDescription(), Game.getTrophyId()));
-            return new ResponseEntity<>(_Game, HttpStatus.CREATED);
+            repository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @DeleteMapping("/deleteGames")
-    public ResponseEntity<Game> deleteGame(@RequestBody Game Game) {
-        try {
-            Game _Game = repository.save(new Game(Game.getGameName(), Game.getDescription(), Game.getTrophyId()));
-            return new ResponseEntity<>(_Game, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+    // @PutMapping("/updateGame/{id}")
+    // public ResponseEntity<Game> updateGame(@PathVariable("id") String id,
+    // @RequestBody Game game) {
+    // try {
+    // if (repository.exists(example) {
+    // // game.setGameName(game.getGameName() + "HAHAA");
+    // // repository.save();
+    // System.out.println("Olen idiootti");
+    // return new ResponseEntity<>(HttpStatus.OK);
+    // }
+    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+    // } catch (Exception e) {
+    // return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+    // }
+    // }
+
+    // @PutMapping(path = "/{username}")
+    // public User update(@PathVariable("username") String username, @RequestBody
+    // User user) throws BadHttpRequest {
+    // if (repository.exists(username)) {
+    // user.setUsername(username);
+    // return repository.save(user);
+    // } else {
+    // throw new BadHttpRequest();
+    // }
+    // }
+
 }
