@@ -1,4 +1,7 @@
-import { Box, Button, FormLabel, Input } from '@chakra-ui/react';
+import { Box,
+    Button,
+    FormLabel,
+    Input, } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -25,7 +28,7 @@ const AddGameForm: any = (props) => {
 
 	return (
 		<>
-			<Box bg="tomato" w="100%" p={4} color="white">
+			<Box bg="tomato" w="100%" p={4} color="white" style={{borderRadius: 12}}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<FormLabel htmlFor="gameName">Name of the game</FormLabel>
 					<Input onChange={handleChange} name="gameName" placeholder="Name of the game" ref={register} />
