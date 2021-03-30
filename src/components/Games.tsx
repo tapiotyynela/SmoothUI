@@ -1,7 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios, { ResponseType } from "axios";
-import { Box } from "@chakra-ui/react";
+import { Box,
+	Stat,
+    StatLabel,
+    StatNumber,
+    StatHelpText,
+    StatArrow,
+	StatGroup,
+	List,
+	ListItem } from "@chakra-ui/react";
 import AddGameForm from "./AddGameForm";
 
 const Games = () => {
@@ -20,19 +28,20 @@ const Games = () => {
 
 	return (
 		<>	
-			<Box bg="black" w="100%" p={4} color="white">
+			<Box bg="white" w="100%" p={4} color="white">
 				<AddGameForm getGames={getGames}/>
+				<List>
 				{
 					games.map(game => (
-						<Box>
-							Pelin nimi: {game.gameName}
-							<br/>
-							Pelin kuvaus: {game.description}
-							<br/>
-							<br/>
-						</Box>
+						<ListItem key={game.id} style={{borderWidth: 2, borderRadius: 12, borderColor: '#ff8383', marginTop: 7}}>
+							<Stat color="tomato" style={{marginBottom: 5, marginRight: 10}}>
+								<StatNumber>{game.gameName}</StatNumber>
+								<StatLabel>{game.description}</StatLabel>
+							</Stat>
+						</ListItem>
 					))
 				}
+				</List>
 			</Box>
 		</>
 	);
