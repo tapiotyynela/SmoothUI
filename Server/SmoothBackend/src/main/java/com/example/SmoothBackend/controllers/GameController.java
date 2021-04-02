@@ -58,32 +58,20 @@ public class GameController {
         }
     }
 
-    // @PutMapping("/updateGame/{id}")
-    // public ResponseEntity<Game> updateGame(@PathVariable("id") String id,
-    // @RequestBody Game game) {
-    // try {
-    // if (repository.exists(example) {
-    // // game.setGameName(game.getGameName() + "HAHAA");
-    // // repository.save();
-    // System.out.println("Olen idiootti");
-    // return new ResponseEntity<>(HttpStatus.OK);
-    // }
-    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    @PutMapping("/updateGame/{id}")
+    public ResponseEntity<Game> updateGame(@PathVariable("id") String id, @RequestBody Game game) {
+    try {
+    if (repository.existsById(id)) {
+        game.setGameName(game.getGameName());
+        repository.save(game);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
-    // } catch (Exception e) {
-    // return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-    // }
-    // }
+    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-    // @PutMapping(path = "/{username}")
-    // public User update(@PathVariable("username") String username, @RequestBody
-    // User user) throws BadHttpRequest {
-    // if (repository.exists(username)) {
-    // user.setUsername(username);
-    // return repository.save(user);
-    // } else {
-    // throw new BadHttpRequest();
-    // }
-    // }
+    } catch (Exception e) {
+    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    }
 
 }
