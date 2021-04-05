@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Trophy")
 public class Trophy {
-    
+
     @Id
     private String id;
     private String trophyName;
@@ -16,8 +16,7 @@ public class Trophy {
     public Trophy() {
     }
 
-    public Trophy(String id, String trophyName, String trophyDescription, String rarity, String gameId) {
-        this.id = id;
+    public Trophy(String trophyName, String trophyDescription, String rarity, String gameId) {
         this.trophyName = trophyName;
         this.trophyDescription = trophyDescription;
         this.rarity = rarity;
@@ -69,7 +68,5 @@ public class Trophy {
         return "Trophy [gameId=" + gameId + ", id=" + id + ", rarity=" + rarity + ", trophyDescription="
                 + trophyDescription + ", trophyName=" + trophyName + "]";
     }
-
-    
 
 }

@@ -60,18 +60,17 @@ public class GameController {
 
     @PutMapping("/updateGame/{id}")
     public ResponseEntity<Game> updateGame(@PathVariable("id") String id, @RequestBody Game game) {
-    try {
-    if (repository.existsById(id)) {
-        game.setGameName(game.getGameName());
-        repository.save(game);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+        try {
+            if (repository.existsById(id)) {
+                repository.save(game);
+                return new ResponseEntity<>(HttpStatus.OK);
+            }
 
-    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-    } catch (Exception e) {
-    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }
