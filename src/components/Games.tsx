@@ -16,9 +16,7 @@ const Games = () => {
 	const [games, setGames] = useState([]);
 
 	const getGames: any = () => {
-		console.log("TERVE")
 		axios.get("/api/getGames").then((res) => {
-			console.log("MOI")
 			setGames(res.data)});
 	};
 
