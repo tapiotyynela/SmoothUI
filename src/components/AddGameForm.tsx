@@ -28,7 +28,7 @@ const AddGameForm: any = (props) => {
 
 	return (
 		<>
-			<Box bg="tomato" w="100%" p={4} color="white" style={{borderRadius: 12}}>
+			<Box bg="white" w="100%" p={4} color="grey" style={{borderRadius: 12}}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<FormLabel htmlFor="gameName">Name of the game</FormLabel>
 					<Input onChange={handleChange} name="gameName" placeholder="Name of the game" ref={register} />
