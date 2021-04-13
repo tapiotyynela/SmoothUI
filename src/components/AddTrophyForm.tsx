@@ -30,7 +30,7 @@ const AddTrophyForm: any = (props) => {
 
 	return (
 		<>
-			<Box bg="tomato" w="100%" p={4} color="white" style={{borderRadius: 12}}>
+			<Box bg="white" w="100%" p={4} color="grey" style={{borderRadius: 12}}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<FormLabel htmlFor="TrophyName">Name of the Trophy</FormLabel>
 					<Input onChange={handleChange} name="trophyName" placeholder="Name of the Trophy" ref={register} />

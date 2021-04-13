@@ -25,13 +25,13 @@ const Trophies = () => {
 
 	return (
 		<>
-			<Box bg="blue" w="100%" p={4} color="white">
+			<Box bg="white" w="100%" p={4} color="white">
 				<AddTrophyForm getTrophies={getTrophies} games={games}/>
 					<List>
 					{
 						trophies.map(trophy => (
-							<ListItem key={trophy.id} style={{borderWidth: 2, borderRadius: 12, borderColor: '#ff8383', marginTop: 7}}>
-								<Stat color="tomato" style={{marginBottom: 5, marginRight: 10}}>
+							<ListItem key={trophy.id} style={{borderWidth: 2, borderRadius: 12, borderColor: 'grey', marginTop: 7}}>
+								<Stat color="grey" style={{marginBottom: 5, marginRight: 10}}>
 									<StatNumber>{trophy.trophyName}</StatNumber>
 									<StatLabel>{trophy.trophyDescription}</StatLabel>
 								</Stat>
